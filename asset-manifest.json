@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/margo-invitation/static/css/main.73c12d5f.css",
+    "main.js": "/margo-invitation/static/js/main.8192a4b2.js",
+    "static/js/453.1e6a8627.chunk.js": "/margo-invitation/static/js/453.1e6a8627.chunk.js",
+    "static/media/Cocogoose-Classic-Medium-trial.ttf": "/margo-invitation/static/media/Cocogoose-Classic-Medium-trial.eb4ac05e6a9e8ba2af09.ttf",
+    "static/media/Cocogoose-Classic-ExtraBold-trial.ttf": "/margo-invitation/static/media/Cocogoose-Classic-ExtraBold-trial.8c24a2c759abbf9f0222.ttf",
+    "static/media/Mister Grape - Personal Use.otf": "/margo-invitation/static/media/Mister Grape - Personal Use.645f6b9714a0c0fd6f58.otf",
+    "static/media/cute-Peronal Use.ttf": "/margo-invitation/static/media/cute-Peronal Use.c5f4670267d229a2fd0c.ttf",
+    "static/media/cute-Peronal Use.otf": "/margo-invitation/static/media/cute-Peronal Use.f598bde65adece53755c.otf",
+    "static/media/smallPhoto1.jpg": "/margo-invitation/static/media/smallPhoto1.4301cc2f0b649c118839.jpg",
+    "static/media/KGPerfectPenmanship.ttf": "/margo-invitation/static/media/KGPerfectPenmanship.19fd40d5eec7a1031023.ttf",
+    "static/media/largePhoto.jpg": "/margo-invitation/static/media/largePhoto.2f3e7b0fb9d9967ba912.jpg",
+    "static/media/smallPhoto2.jpg": "/margo-invitation/static/media/smallPhoto2.d0ce073c75a8fff891a6.jpg",
+    "static/media/KGPerfectPenmanship.otf": "/margo-invitation/static/media/KGPerfectPenmanship.a3ce39e894f8acc725da.otf",
+    "static/media/ADELIA.otf": "/margo-invitation/static/media/ADELIA.094b11e107a409d7ef32.otf",
+    "index.html": "/margo-invitation/index.html",
+    "main.73c12d5f.css.map": "/margo-invitation/static/css/main.73c12d5f.css.map",
+    "main.8192a4b2.js.map": "/margo-invitation/static/js/main.8192a4b2.js.map",
+    "453.1e6a8627.chunk.js.map": "/margo-invitation/static/js/453.1e6a8627.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73c12d5f.css",
+    "static/js/main.8192a4b2.js"
+  ]
+}
