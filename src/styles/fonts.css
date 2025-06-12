@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Adelia';
+  src: url('../asset/fonts/ADELIA.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('../asset/fonts/Cocogoose-Classic-ExtraBold-trial.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cocogoose';
+  src: url('../asset/fonts/Cocogoose-Classic-Medium-trial.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KG Perfect Penmanship';
+  src: url('../asset/fonts/KGPerfectPenmanship.otf') format('opentype'),
+       url('../asset/fonts/KGPerfectPenmanship.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mister Grape';
+  src: url('../asset/fonts/Mister Grape - Personal Use.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cute';
+  src: url('../asset/fonts/cute-Peronal Use.otf') format('opentype'),
+       url('../asset/fonts/cute-Peronal Use.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
