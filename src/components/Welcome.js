@@ -207,13 +207,13 @@ const Welcome = () => {
     { emoji: '💖', x: 85, y: 80, delay: 1.5 },
     { emoji: '✨', x: 25, y: 40, delay: 2.5 },
     { emoji: '🌟', x: 70, y: 60, delay: 1.8 },
-    { emoji: '💝', x: 40, y: 85, delay: 0.8 },
+    { emoji: '🌸', x: 40, y: 85, delay: 0.8 },
     { emoji: '🎈', x: 60, y: 25, delay: 2.2 },
-    { emoji: '🦄', x: 30, y: 10, delay: 1.2 },
+    { emoji: '💖', x: 30, y: 10, delay: 1.2 },
     { emoji: '🌸', x: 95, y: 45, delay: 0.3 },
     { emoji: '💫', x: 45, y: 95, delay: 1.7 },
-    { emoji: '🎊', x: 75, y: 5, delay: 2.8 },
-    { emoji: '🌈', x: 20, y: 55, delay: 0.7 },
+    { emoji: '💖', x: 75, y: 5, delay: 2.8 },
+    { emoji: '🌸', x: 20, y: 55, delay: 0.7 },
     { emoji: '✨', x: 55, y: 75, delay: 2.1 }
   ];
 

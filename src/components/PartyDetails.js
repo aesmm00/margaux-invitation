@@ -1,5 +1,10 @@
-import React from 'react';
-import { Box, Button, CardMedia, Container, Grid, Paper, Stack, styled, Typography } from '@mui/material';
+import React, { useState, Fragment } from 'react';
+import { Box, Button, CardMedia, Container, Grid, Paper, Stack, styled, Typography, IconButton } from '@mui/material';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
+import ZoomOutIcon from '@mui/icons-material/ZoomOut';
+import CloseIcon from '@mui/icons-material/Close';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import firstProgram from '../asset/photo/program/2.png'; 
 import secondProgram from '../asset/photo/program/3.png';
 import thirdProgram from '../asset/photo/program/4.png';
@@ -51,8 +56,32 @@ const DecorativeCircle = styled('div')(({ size = 60, color}) => ({
 }));
 
 const PartyDetails = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(-1);
+    const images = [firstProgram, secondProgram, thirdProgram];
+
+    const handleOpenViewer = (index) => {
+        setCurrentImageIndex(index);
+    };
+
+    const handleCloseViewer = () => {
+        setCurrentImageIndex(-1);
+    };
+
+    const handlePrevImage = () => {
+        setCurrentImageIndex((prevIndex) => 
+            prevIndex > 0 ? prevIndex - 1 : images.length - 1
+        );
+    };
+
+    const handleNextImage = () => {
+        setCurrentImageIndex((prevIndex) => 
+            prevIndex < images.length - 1 ? prevIndex + 1 : 0
+        );
+    };
+
     return (
-        <Container maxWidth="2xl" mx>
+        <Fragment>
+            <Container maxWidth="2xl" mx>
             <StyledPaper elevation={3}>
               <StyledTitle variant="h2" gutterBottom>
                   Honoring Traditions & Cherished Moments 
@@ -67,9 +96,16 @@ const PartyDetails = () => {
                           component="img"
                           alt="Birthday Celebration"
                           image={firstProgram}
-                          sx={{ width: '100%', height: 'auto', borderRadius: 2,
-                            boxShadow: '5px 4px 0px  #670d2f'
-                           }}
+                          onClick={() => handleOpenViewer(0)}
+                          sx={{ 
+                              width: '100%', 
+                              height: 'auto', 
+                              borderRadius: 2,
+                              boxShadow: '5px 4px 0px  #670d2f',
+                              cursor: 'pointer',
+                              transition: 'transform 0.2s',
+                              '&:hover': { transform: 'scale(1.02)' }
+                          }}
                       />
                   </Grid>
                   <Grid size={{ xl: 4, md: 6, xs: 12 }}>
@@ -77,17 +113,33 @@ const PartyDetails = () => {
                           component="img"
                           alt="Birthday Celebration"
                           image={secondProgram}
-                            sx={{ width: '100%', height: 'auto', borderRadius: 2,
-                            boxShadow: '5px 4px 0px  #670d2f'
-                           }}                      />
+                          onClick={() => handleOpenViewer(1)}
+                          sx={{ 
+                              width: '100%', 
+                              height: 'auto', 
+                              borderRadius: 2,
+                              boxShadow: '5px 4px 0px  #670d2f',
+                              cursor: 'pointer',
+                              transition: 'transform 0.2s',
+                              '&:hover': { transform: 'scale(1.02)' }
+                          }}
+                      />
                   </Grid>
                   <Grid size={{ xl: 4, md: 6, xs: 12 }}>
                       <CardMedia
                           component="img"
                           alt="Birthday Celebration"
                           image={thirdProgram}
-                          sx={{ width: '100%', height: 'auto', borderRadius: 2, boxShadow: '5px 4px 0px  #670d2f'
- }}
+                          onClick={() => handleOpenViewer(2)}
+                          sx={{ 
+                              width: '100%', 
+                              height: 'auto', 
+                              borderRadius: 2,
+                              boxShadow: '5px 4px 0px  #670d2f',
+                              cursor: 'pointer',
+                              transition: 'transform 0.2s',
+                              '&:hover': { transform: 'scale(1.02)' }
+                          }}
                       />
                       </Grid>
               </Grid>
@@ -178,7 +230,127 @@ const PartyDetails = () => {
                     </Grid>
               </Box>
             </StyledPaper>
-        </Container>
+            </Container>
+            {currentImageIndex !== -1 && (
+                <ImageViewer
+                    images={images}
+                    currentIndex={currentImageIndex}
+                    onClose={handleCloseViewer}
+                    onPrev={handlePrevImage}
+                    onNext={handleNextImage}
+                />
+            )}
+        </Fragment>
+    );
+};
+
+const ImageViewer = ({ images, currentIndex, onClose, onPrev, onNext }) => {
+    const [zoom, setZoom] = useState(1);
+
+    const handleZoomIn = () => {
+        setZoom(prev => Math.min(prev + 0.1, 3));
+    };
+
+    const handleZoomOut = () => {
+        setZoom(prev => Math.max(prev - 0.1, 0.5));
+    };
+
+    return (
+        <Box
+            sx={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                zIndex: 9999,
+            }}
+        >
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: 60,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    px: 2,
+                }}
+            >
+                <Typography color="white">
+                    {`${currentIndex + 1} of ${images.length}`}
+                </Typography>
+                <IconButton
+                    onClick={onClose}
+                    sx={{ color: 'white' }}
+                >
+                    <CloseIcon />
+                </IconButton>
+            </Box>
+            <IconButton
+                onClick={onPrev}
+                sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: 20,
+                    color: 'white',
+                    transform: 'translateY(-50%)',
+                }}
+            >
+                <ArrowBackIosNewIcon />
+            </IconButton>
+            <IconButton
+                onClick={onNext}
+                sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    right: 20,
+                    color: 'white',
+                    transform: 'translateY(-50%)',
+                }}
+            >
+                <ArrowForwardIosIcon />
+            </IconButton>
+            <img
+                src={images[currentIndex]}
+                alt={`Image ${currentIndex + 1}`}
+                style={{
+                    maxWidth: '90%',
+                    maxHeight: '90%',
+                    objectFit: 'contain',
+                    transform: `scale(${zoom})`,
+                    transition: 'transform 0.2s',
+                }}
+            />
+            <Box
+                sx={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: 60,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 2,
+                }}
+            >
+                <IconButton onClick={handleZoomOut} sx={{ color: 'white' }}>
+                    <ZoomOutIcon />
+                </IconButton>
+                <IconButton onClick={handleZoomIn} sx={{ color: 'white' }}>
+                    <ZoomInIcon />
+                </IconButton>
+            </Box>
+        </Box>
     );
 };
 
