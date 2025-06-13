@@ -1,9 +1,7 @@
 import React from 'react';
 import { Box, Typography, Container, Paper } from '@mui/material';
 import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
-import largePhoto from '../asset/photo/welcome-section/largePhoto.jpg';
-import smallPhoto1 from '../asset/photo/welcome-section/smallPhoto1.jpg';
-import smallPhoto2 from '../asset/photo/welcome-section/smallPhoto2.jpg';
+import welcomePhoto from '../asset/photo/welcome-section/welcomePhoto.png';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
@@ -124,65 +122,11 @@ const CelebrateMessage = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const LargePhoto = styled('img')(({ theme }) => ({
-  width: '300px',
-  height: '300px',
-  objectFit: 'cover',
-  borderRadius: '50%',
-  border: '8px solid #FF69B4',
-  boxShadow: '0 4px 20px rgba(255, 105, 180, 0.3)',
-  marginBottom: theme.spacing(2),
-  [theme.breakpoints.down('md')]: {
-    width: '250px',
-    height: '250px',
-  },
-  [theme.breakpoints.down('sm')]: {
-    width: '200px',
-    height: '200px',
-  },
+const Image = styled('img')(({ theme }) => ({
+  width: '100%',
+  height: 'auto',
 }));
 
-const SmallPhoto = styled('img')(({ theme }) => ({
-  width: '150px',
-  height: '150px',
-  objectFit: 'cover',
-  borderRadius: '50%',
-  border: '4px solid #FF69B4',
-  boxShadow: '0 4px 12px rgba(255, 105, 180, 0.2)',
-  margin: theme.spacing(0, 1),
-  [theme.breakpoints.down('sm')]: {
-    width: '100px',
-    height: '100px',
-  },
-}));
-
-const TinyPhoto = styled('img')(({ theme }) => ({
-  width: '100px',
-  height: '100px',
-  objectFit: 'cover',
-  borderRadius: '50%',
-  border: '3px solid #FF69B4',
-  boxShadow: '0 4px 8px rgba(255, 105, 180, 0.2)',
-  margin: theme.spacing(0, 1),
-  [theme.breakpoints.down('sm')]: {
-    width: '80px',
-    height: '80px',
-  },
-}));
-
-const MediumPhoto = styled('img')(({ theme }) => ({
-  width: '200px',
-  height: '200px',
-  objectFit: 'cover',
-  borderRadius: '50%',
-  border: '6px solid #FF69B4',
-  boxShadow: '0 4px 16px rgba(255, 105, 180, 0.25)',
-  margin: theme.spacing(0, 1),
-  [theme.breakpoints.down('sm')]: {
-    width: '150px',
-    height: '150px',
-  },
-}));
 
 const theme = createTheme({
   spacing: (factor) => `${0.25 * factor}rem`,
@@ -250,78 +194,7 @@ const Welcome = () => {
 
         <PhotoCollage>
           <Box position="relative" width="100%" height="100%">
-            {/* Center large photo */}
-            <Box position="absolute" left="50%" top="50%" sx={{ 
-              transform: 'translate(-50%, -50%) rotate(-5deg)', 
-              zIndex: 2,
-              [theme.breakpoints.down('sm')]: {
-                left: '50%',
-                top: '50%',
-                transform: 'translate(-50%, -50%) rotate(0deg)',
-              },
-            }}>
-              <LargePhoto src={largePhoto} alt="Margaux Louise" />
-            </Box>
-            
-            {/* Overlapping photos in collage arrangement */}
-            <Box position="absolute" left="10%" top="10%" sx={{ 
-              transform: 'rotate(8deg)', 
-              zIndex: 3,
-              [theme.breakpoints.down('sm')]: {
-                left: '5%',
-                top: '5%',
-              },
-            }}>
-              <MediumPhoto src={smallPhoto1} alt="Photo 1" />
-            </Box>
-            <Box position="absolute" right="5%" top="15%" sx={{ 
-              transform: 'rotate(-10deg)', 
-              zIndex: 1,
-              [theme.breakpoints.down('sm')]: {
-                right: '5%',
-                top: '5%',
-              },
-            }}>
-              <SmallPhoto src={smallPhoto2} alt="Photo 2" />
-            </Box>
-            <Box position="absolute" left="15%" bottom="15%" sx={{ 
-              transform: 'rotate(12deg)', 
-              zIndex: 4,
-              [theme.breakpoints.down('sm')]: {
-                left: '5%',
-                bottom: '5%',
-              },
-            }}>
-              <SmallPhoto src={smallPhoto1} alt="Photo 3" />
-            </Box>
-            <Box position="absolute" right="20%" bottom="20%" sx={{ 
-              transform: 'rotate(-8deg)', 
-              zIndex: 3,
-              [theme.breakpoints.down('sm')]: {
-                right: '5%',
-                bottom: '5%',
-              },
-            }}>
-              <MediumPhoto src={smallPhoto2} alt="Photo 4" />
-            </Box>
-            <Box position="absolute" left="40%" top="5%" sx={{ 
-              transform: 'rotate(15deg)', 
-              zIndex: 1,
-              [theme.breakpoints.down('sm')]: {
-                display: 'none',
-              },
-            }}>
-              <TinyPhoto src={largePhoto} alt="Photo 5" />
-            </Box>
-            <Box position="absolute" right="35%" bottom="10%" sx={{ 
-              transform: 'rotate(-15deg)', 
-              zIndex: 2,
-              [theme.breakpoints.down('sm')]: {
-                display: 'none',
-              },
-            }}>
-              <SmallPhoto src={smallPhoto1} alt="Photo 6" />
-            </Box>
+              <Image src={welcomePhoto} alt="Margaux Louise" />
           </Box>
         </PhotoCollage>
       </StyledPaper>
