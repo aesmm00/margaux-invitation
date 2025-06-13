@@ -11,6 +11,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   borderRadius: '20px',
   textAlign: 'center',
   marginBottom: theme.spacing(4),
+
 }));
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
@@ -21,7 +22,9 @@ const StyledTitle = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   marginBottom: theme.spacing(4),
   textShadow: '3px 2px 0px #FFFFFF',
-
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+  },
 }));
 
 const PartyDetails = () => {
@@ -29,7 +32,7 @@ const PartyDetails = () => {
         <Container maxWidth="2xl" mx>
             <StyledPaper elevation={3}>
               <StyledTitle variant="h2" gutterBottom>
-                  Birthday Celebration Details
+                  Party Details
               </StyledTitle>
 
               <Grid container spacing={2} direction={'row'} alignItems={'center'} justifyContent={'center'}>
