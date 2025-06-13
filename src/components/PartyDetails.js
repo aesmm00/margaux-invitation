@@ -320,7 +320,7 @@ const ImageViewer = ({ images, currentIndex, onClose, onPrev, onNext }) => {
             </IconButton>
             <img
                 src={images[currentIndex]}
-                alt={`Image ${currentIndex + 1}`}
+                alt={`${currentIndex + 1}`}
                 style={{
                     maxWidth: '90%',
                     maxHeight: '90%',

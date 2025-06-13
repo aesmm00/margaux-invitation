@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import { Box } from '@mui/material';
 import Welcome from './components/Welcome';
 import PartyDetails from './components/PartyDetails';
