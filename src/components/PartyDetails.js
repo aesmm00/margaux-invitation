@@ -183,25 +183,23 @@ const PartyDetails = () => {
                             </Stack>
                             <Stack spacing={2} direction={'row'}>
                                 <Typography variant="h6" sx={{ color: '#670d2f', fontFamily: '"Belina", sans-serif', fontWeight: 800, fontSize: '1.2rem'}}>
+                                    Date & Time:
+                                </Typography>
+                                <Typography variant="body1" sx={{ color: '#670d2f', fontFamily: '"Belina", sans-serif', fontSize: '1.2rem' }}>
+                                    Saturday, August 9, 2025, at 3 PM
+                                </Typography>
+                            </Stack>
+                            <Stack spacing={2} direction={'row'}>
+                                <Typography variant="h6" sx={{ color: '#670d2f', fontFamily: '"Belina", sans-serif', fontWeight: 800, fontSize: '1.2rem'}}>
                                     Venue:
                                 </Typography>
                                 <Typography variant="body1" sx={{ color: '#670d2f', fontFamily: '"Belina", sans-serif', fontSize: '1.2rem' }}>
                                     3s Canumay West Function Hall, 6 T. Santiago, Valenzuela, Metro Manila
                                 </Typography>
                             </Stack>
-                            <Stack spacing={2} direction={'row'}>
-                                <Typography variant="h6" sx={{ color: '#670d2f', fontFamily: '"Belina", sans-serif', fontWeight: 800, fontSize: '1.2rem'}}>
-                                    Date & Time:
-                                </Typography>
-                                <Typography variant="body1" sx={{ color: '#670d2f', fontFamily: '"Belina", sans-serif', fontSize: '1.2rem' }}>
-                                    Saturday, August 9, 2024, at 3 PM
-                                </Typography>
-                            </Stack>
-
                         </Grid>
+                        
                         <Grid size={{ xl: 4, md: 6, xs: 12 }}>
-  
-
                             <Stack >
                                 <Typography variant="h6" sx={{ color: '#670d2f', fontFamily: '"Belina", sans-serif', fontSize: '1.2rem'}}>
                                     Need directions? Just click or scan the magical QR code below to lead you straight to the celebration! 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, Paper } from '@mui/material';
+import { Box, Typography, Container, Paper, Grid } from '@mui/material';
 import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
 import welcomePhoto from '../asset/photo/welcome-section/welcomePhoto.png';
 
@@ -39,36 +39,6 @@ const FloatingElement = styled('div')(({ theme, delay = 0, x = 0, y = 0 }) => ({
   },
   [theme.breakpoints.down('sm')]: {
     fontSize: '1.5rem',
-  },
-}));
-
-const ContentBox = styled(Box)(({ theme }) => ({
-  width: '50%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'flex-start',
-  padding: theme.spacing(4),
-  position: 'relative',
-  zIndex: 2,
-  [theme.breakpoints.down('md')]: {
-    width: '100%',
-    padding: theme.spacing(2),
-  },
-}));
-
-const PhotoCollage = styled(Box)(({ theme }) => ({
-  width: '50%',
-  position: 'relative',
-  zIndex: 2,
-  padding: theme.spacing(2),
-  minHeight: '600px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  [theme.breakpoints.down('md')]: {
-    width: '100%',
-    minHeight: '400px',
   },
 }));
 
@@ -177,26 +147,26 @@ const Welcome = () => {
           </FloatingElement>
         ))}
 
-        <ContentBox>
-          <Box width="100%" textAlign="center">
-            <WelcomeTitle>
-              A Magical Day to Celebrate 7 !
-            </WelcomeTitle>
-            <CelebrantName>
-              Margaux Louise
-              {/* <CelebrantAge>7</CelebrantAge> */}
-            </CelebrantName>
-            <CelebrateMessage>
-              Let's sparkle, laugh, and celebrate Margaux's 7th birthday with all the sweetness and magic that Sanrio brings!
-            </CelebrateMessage>
-          </Box>
-        </ContentBox>
-
-        <PhotoCollage>
-          <Box position="relative" width="100%" height="100%">
+        <Grid container justifyContent="center" alignItems="center" direction={{ xs: 'column', sm: 'row' }}>
+          <Grid size={{ xs: 12, sm: 6}}>
+            <Box sx={{ position: 'relative', zIndex: 2 }}>
+              <WelcomeTitle>
+                A Magical Day to Celebrate 7 !
+              </WelcomeTitle>
+              <CelebrantName>
+                Margaux Louise
+              </CelebrantName>
+              <CelebrateMessage>
+                Let's sparkle, laugh, and celebrate Margaux's 7th birthday with all the sweetness and magic that Sanrio brings!
+              </CelebrateMessage>
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, sm: 6}}>
+            <Box sx={{ position: 'relative', zIndex: 2 }}>
               <Image src={welcomePhoto} alt="Margaux Louise" />
-          </Box>
-        </PhotoCollage>
+            </Box>
+            </Grid>
+        </Grid>
       </StyledPaper>
     </Container>
     </ThemeProvider>
