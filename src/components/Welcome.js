@@ -151,7 +151,6 @@ const CelebrateMessage = styled(Typography)(({ theme }) => ({
   fontSize: '1.5rem',
   textAlign: 'center',
   marginBottom: theme.spacing(4),
-  maxWidth: '80%',
   fontStyle: 'italic',
   textShadow: '1px 1px 0px #FFFFFF',
   [theme.breakpoints.down('sm')]: {
@@ -267,7 +266,7 @@ const Welcome = () => {
             </WelcomeTitle>
             <CelebrantName>
               Margaux Louise
-              <CelebrantAge>7</CelebrantAge>
+              {/* <CelebrantAge>7</CelebrantAge> */}
             </CelebrantName>
             <CelebrateMessage>
               Let's sparkle, laugh, and celebrate Margaux's 7th birthday with all the sweetness and magic that Sanrio brings!
