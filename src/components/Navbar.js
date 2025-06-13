@@ -42,7 +42,7 @@ const NavItem = styled(Typography)(({ theme }) => ({
   fontFamily: '"Belina", sans-serif',
   fontWeight: 'bold',
   '&:hover': {
-    color: '#FF69B4',
+    color: '#670d2f',
   },
 }));
 
@@ -50,7 +50,9 @@ const LogoText = styled(Typography)(({ theme }) => ({
   fontFamily: '"Stars and Love", cursive',
   fontWeight: 'bold',
   fontSize: '1.5rem',
-  color: '#000',
+  color: '#FFFFFF',
+  textShadow: '3px 3px 0px #cc9933',
+
 }));
 
 const Navbar = ({ welcomeRef, partyDetailsRef, rsvpRef }) => {
@@ -74,7 +76,8 @@ const Navbar = ({ welcomeRef, partyDetailsRef, rsvpRef }) => {
     <StyledAppBar position="sticky">
       <Toolbar>
         <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-          <span role="img" aria-label="bow" style={{ marginRight: '8px', fontSize: '1.5rem' }}>🎀</span>
+          <span role="img" aria-label="bow" style={{ marginRight: '8px', fontSize: '1.5rem',   textShadow: '3px 3px 0px #cc9933',
+ }}>🎀</span>
           <LogoText>
             Margaux's 7th Birthday Party
           </LogoText>
