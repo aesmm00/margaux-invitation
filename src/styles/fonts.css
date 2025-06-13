@@ -41,3 +41,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Stars and Love';
+  src: url('../asset/fonts/Stars&Love-BottomHeavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Belina';
+  src: url('../asset/fonts/Belina-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

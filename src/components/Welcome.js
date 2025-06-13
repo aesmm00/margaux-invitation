@@ -93,28 +93,31 @@ const PhotoCollage = styled(Box)(({ theme }) => ({
 }));
 
 const WelcomeTitle = styled(Typography)(({ theme }) => ({
-  color: '#FF1493',
-  fontFamily: '"Cute", cursive',
+  color: '#670d2f',
+  fontFamily: '"Belina", sans-serif',
   fontSize: '1.75rem',
   fontWeight: 'bold',
   textAlign: 'center',
   marginBottom: theme.spacing(2),
-  textShadow: '2px 2px 0px #FFF, 4px 4px 0px #FF69B4',
+  textShadow: '1px 1px 0px #FFFFFF',
   [theme.breakpoints.down('sm')]: {
     fontSize: '1.5rem',
   },
 }));
 
 const CelebrantName = styled(Typography)(({ theme }) => ({
-  color: '#FF1493',
-  fontFamily: '"Cute", cursive',
+  color: '#FFFFFF',
+  fontFamily: '"Stars and Love", cursive',
   fontSize: '6rem',
   fontWeight: 'bold',
   textAlign: 'center',
   marginBottom: theme.spacing(2),
-  textShadow: '2px 2px 0px #FFF, 4px 4px 0px #FF69B4',
+  textShadow: '3px 4px 0px #cc9933',
   lineHeight: '1.2',
   letterSpacing: '0.2rem',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
   [theme.breakpoints.down('md')]: {
     fontSize: '4rem',
   },
@@ -123,15 +126,34 @@ const CelebrantName = styled(Typography)(({ theme }) => ({
   },
 }));
 
+const CelebrantAge = styled(Typography)(({ theme }) => ({
+  color: '#FFFFFF',
+  fontFamily: '"Belina", sans-serif',
+  fontSize: '8rem',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginTop: theme.spacing(-2),
+  textShadow: '3px 4px 0px #cc9933',
+  lineHeight: '1',
+  [theme.breakpoints.down('md')]: {
+    fontSize: '6rem',
+    marginTop: theme.spacing(-1),
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '4rem',
+    marginTop: '0',
+  },
+}));
+
 const CelebrateMessage = styled(Typography)(({ theme }) => ({
-  color: '#FF69B4',
-  fontFamily: '"KG Perfect Penmanship", cursive',
+  color: '#670d2f',
+  fontFamily: '"Belina", sans-serif',
   fontSize: '1.5rem',
   textAlign: 'center',
   marginBottom: theme.spacing(4),
   maxWidth: '80%',
   fontStyle: 'italic',
-  textShadow: '1px 1px 0px #FFF, 2px 2px 0px #FF69B4',
+  textShadow: '1px 1px 0px #FFFFFF',
   [theme.breakpoints.down('sm')]: {
     fontSize: '1.25rem',
     maxWidth: '100%',
@@ -245,6 +267,7 @@ const Welcome = () => {
             </WelcomeTitle>
             <CelebrantName>
               Margaux Louise
+              <CelebrantAge>7</CelebrantAge>
             </CelebrantName>
             <CelebrateMessage>
               Let's sparkle, laugh, and celebrate Margaux's 7th birthday with all the sweetness and magic that Sanrio brings!

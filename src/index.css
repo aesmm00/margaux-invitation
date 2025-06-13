@@ -41,6 +41,14 @@ code {
   font-family: 'Cute', cursive;
 }
 
+.font-stars-and-love {
+  font-family: 'Stars and Love', cursive;
+}
+
+.font-belina {
+  font-family: 'Belina', sans-serif;
+}
+
 @media (max-width: 768px) {
   :root {
     font-size: 14px;
