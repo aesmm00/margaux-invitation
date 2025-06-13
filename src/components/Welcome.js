@@ -126,24 +126,7 @@ const CelebrantName = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const CelebrantAge = styled(Typography)(({ theme }) => ({
-  color: '#FFFFFF',
-  fontFamily: '"Belina", sans-serif',
-  fontSize: '8rem',
-  fontWeight: 'bold',
-  textAlign: 'center',
-  marginTop: theme.spacing(-2),
-  textShadow: '3px 4px 0px #cc9933',
-  lineHeight: '1',
-  [theme.breakpoints.down('md')]: {
-    fontSize: '6rem',
-    marginTop: theme.spacing(-1),
-  },
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '4rem',
-    marginTop: '0',
-  },
-}));
+
 
 const CelebrateMessage = styled(Typography)(({ theme }) => ({
   color: '#670d2f',
