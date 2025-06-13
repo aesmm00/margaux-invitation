@@ -1,9 +1,13 @@
 {
   "files": {
-    "main.css": "/margo-invitation/static/css/main.73c12d5f.css",
-    "main.js": "/margo-invitation/static/js/main.8192a4b2.js",
+    "main.css": "/margo-invitation/static/css/main.8a67ae8f.css",
+    "main.js": "/margo-invitation/static/js/main.f6504964.js",
     "static/js/453.1e6a8627.chunk.js": "/margo-invitation/static/js/453.1e6a8627.chunk.js",
+    "static/media/3.png": "/margo-invitation/static/media/3.5c73880dfb10bf885596.png",
+    "static/media/4.png": "/margo-invitation/static/media/4.f11abe2ce5d0f7b8a1f1.png",
+    "static/media/2.png": "/margo-invitation/static/media/2.084638df6db1502e23f3.png",
     "static/media/Cocogoose-Classic-Medium-trial.ttf": "/margo-invitation/static/media/Cocogoose-Classic-Medium-trial.eb4ac05e6a9e8ba2af09.ttf",
+    "static/media/Belina-Bold.otf": "/margo-invitation/static/media/Belina-Bold.e6a3d40ccdd624970d71.otf",
     "static/media/Cocogoose-Classic-ExtraBold-trial.ttf": "/margo-invitation/static/media/Cocogoose-Classic-ExtraBold-trial.8c24a2c759abbf9f0222.ttf",
     "static/media/Mister Grape - Personal Use.otf": "/margo-invitation/static/media/Mister Grape - Personal Use.645f6b9714a0c0fd6f58.otf",
     "static/media/cute-Peronal Use.ttf": "/margo-invitation/static/media/cute-Peronal Use.c5f4670267d229a2fd0c.ttf",
@@ -14,13 +18,14 @@
     "static/media/smallPhoto2.jpg": "/margo-invitation/static/media/smallPhoto2.d0ce073c75a8fff891a6.jpg",
     "static/media/KGPerfectPenmanship.otf": "/margo-invitation/static/media/KGPerfectPenmanship.a3ce39e894f8acc725da.otf",
     "static/media/ADELIA.otf": "/margo-invitation/static/media/ADELIA.094b11e107a409d7ef32.otf",
+    "static/media/Stars&Love-BottomHeavy.ttf": "/margo-invitation/static/media/Stars&Love-BottomHeavy.6af1665a6e9b95b9b565.ttf",
     "index.html": "/margo-invitation/index.html",
-    "main.73c12d5f.css.map": "/margo-invitation/static/css/main.73c12d5f.css.map",
-    "main.8192a4b2.js.map": "/margo-invitation/static/js/main.8192a4b2.js.map",
+    "main.8a67ae8f.css.map": "/margo-invitation/static/css/main.8a67ae8f.css.map",
+    "main.f6504964.js.map": "/margo-invitation/static/js/main.f6504964.js.map",
     "453.1e6a8627.chunk.js.map": "/margo-invitation/static/js/453.1e6a8627.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.73c12d5f.css",
-    "static/js/main.8192a4b2.js"
+    "static/css/main.8a67ae8f.css",
+    "static/js/main.f6504964.js"
   ]
 }
