@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Provider } from 'react-redux';
 import { store } from './redux/store';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -59,24 +59,36 @@ const theme = createTheme({
 });
 
 function App() {
+  const welcomeRef = useRef(null);
+  const partyDetailsRef = useRef(null);
+  const rsvpRef = useRef(null);
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
         <Box sx={{ 
           minHeight: '100vh',
           background: 'linear-gradient(135deg, #fff0f5 0%, #fff5fa 100%)',
         }}>
-          <Navbar />
+          <Navbar 
+            welcomeRef={welcomeRef}
+            partyDetailsRef={partyDetailsRef}
+            rsvpRef={rsvpRef}
+          />
           <Box sx={{ 
             py: 2,
             px: { xs: 2, sm: 3, md: 4 },
             maxWidth: '2xl',
             mx: 'auto'
           }}>
-            <Welcome />
-            <PartyDetails />
-            <RSVP />
+            <Box ref={welcomeRef}>
+              <Welcome />
+            </Box>
+            <Box ref={partyDetailsRef}>
+              <PartyDetails />
+            </Box>
+            <Box ref={rsvpRef}>
+              <RSVP />
+            </Box>
           </Box>
         </Box>
       </ThemeProvider>
