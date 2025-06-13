@@ -10,8 +10,10 @@ import wazeQR from '../asset/photo/qrCodes/wazeQR.png';
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
   background: 'linear-gradient(135deg, #FFB6C1 0%, #E6F0FF 100%)',
-  borderRadius: '20px',
+  borderRadius: '30px',
   marginBottom: theme.spacing(4),
+  boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
+
 
 }));
 

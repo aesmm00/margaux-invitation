@@ -15,7 +15,6 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'stretch',
-  border: '3px solid #FF69B4',
   boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
   overflow: 'hidden',
   [theme.breakpoints.down('md')]: {
@@ -24,23 +23,6 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   },
 }));
 
-const BackgroundSeven = styled(Typography)(({ theme }) => ({
-  position: 'absolute',
-  fontSize: '500px',
-  fontFamily: '"Mister Grape", cursive',
-  color: 'rgba(255, 182, 193, 0.15)',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%) rotate(-10deg)',
-  pointerEvents: 'none',
-  zIndex: 0,
-  [theme.breakpoints.down('md')]: {
-    fontSize: '300px',
-  },
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '200px',
-  },
-}));
 
 const FloatingElement = styled('div')(({ theme, delay = 0, x = 0, y = 0 }) => ({
   position: 'absolute',
@@ -223,13 +205,22 @@ const Welcome = () => {
     { emoji: '⭐', x: 90, y: 15, delay: 3 },
     { emoji: '🎀', x: 10, y: 90, delay: 0.5 },
     { emoji: '💖', x: 85, y: 80, delay: 1.5 },
+    { emoji: '✨', x: 25, y: 40, delay: 2.5 },
+    { emoji: '🌟', x: 70, y: 60, delay: 1.8 },
+    { emoji: '💝', x: 40, y: 85, delay: 0.8 },
+    { emoji: '🎈', x: 60, y: 25, delay: 2.2 },
+    { emoji: '🦄', x: 30, y: 10, delay: 1.2 },
+    { emoji: '🌸', x: 95, y: 45, delay: 0.3 },
+    { emoji: '💫', x: 45, y: 95, delay: 1.7 },
+    { emoji: '🎊', x: 75, y: 5, delay: 2.8 },
+    { emoji: '🌈', x: 20, y: 55, delay: 0.7 },
+    { emoji: '✨', x: 55, y: 75, delay: 2.1 }
   ];
 
   return (
     <ThemeProvider theme={theme}>
       <Container maxWidth="2xl">
       <StyledPaper elevation={3}>
-        <BackgroundSeven>7</BackgroundSeven>
         
         {floatingElements.map((el, index) => (
           <FloatingElement
