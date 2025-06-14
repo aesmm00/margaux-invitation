@@ -9,6 +9,11 @@ const CountdownContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   gap: theme.spacing(2),
   marginBottom: theme.spacing(4),
+  [theme.breakpoints.down('sm')]: {
+    gap: theme.spacing(1),
+    flexWrap: 'wrap',
+    marginBottom: theme.spacing(2),
+  },
 }));
 
 const CountdownItem = styled(Box)(({ theme }) => ({
@@ -28,6 +33,10 @@ const CountdownBox = styled(Box)(({ theme }) => ({
   boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   position: 'relative',
   overflow: 'hidden',
+  [theme.breakpoints.down('sm')]: {
+    width: '60px',
+    height: '60px',
+  },
 }));
 
 const CountdownNumber = styled(Typography)(({ theme }) => ({
@@ -36,6 +45,9 @@ const CountdownNumber = styled(Typography)(({ theme }) => ({
   fontSize: '2.5rem',
   fontWeight: 'bold',
   textShadow: '3px 2px 0px #cc9933',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.8rem',
+  },
 }));
 
 const CountdownLabel = styled(Typography)(({ theme }) => ({
@@ -126,7 +138,9 @@ const CelebrantName = styled(Typography)(({ theme }) => ({
     fontSize: '4rem',
   },
   [theme.breakpoints.down('sm')]: {
-    fontSize: '3rem',
+    fontSize: '2.5rem',
+    marginBottom: theme.spacing(1),
+    letterSpacing: '0.1rem',
   },
 }));
 
@@ -229,7 +243,7 @@ const Welcome = () => {
         ))}
 
         <Grid container justifyContent="center" alignItems="center" direction={{ xs: 'column', sm: 'row' }}>
-          <Grid size={{ xs: 12, sm: 6}} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <Grid size={{ xs: 12, sm: 6}} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
             <Box sx={{ position: 'relative', zIndex: 2 }}>
               <WelcomeTitle>
                 A Magical Day to Celebrate 7 !
@@ -269,11 +283,11 @@ const Welcome = () => {
               </CountdownContainer>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, sm: 6}} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <Box sx={{ position: 'relative', zIndex: 2 }}>
+          <Grid size={{ xs: 12, sm: 6}} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
+            <Box sx={{ position: 'relative', zIndex: 2, width: '100%', maxWidth: { xs: '300px', sm: '100%' } }}>
               <Image src={welcomePhoto} alt="Margaux Louise" />
             </Box>
-            </Grid>
+          </Grid>
         </Grid>
       </StyledPaper>
     </Container>
