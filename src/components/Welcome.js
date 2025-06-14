@@ -1,7 +1,61 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Typography, Container, Paper, Grid } from '@mui/material';
 import { styled, ThemeProvider, createTheme } from '@mui/material/styles';
 import welcomePhoto from '../asset/photo/welcome-section/welcomePhoto.png';
+
+const CountdownContainer = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  gap: theme.spacing(2),
+  marginBottom: theme.spacing(4),
+}));
+
+const CountdownItem = styled(Box)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+}));
+
+const CountdownBox = styled(Box)(({ theme }) => ({
+  background: '#670d2f',
+  borderRadius: '8px',
+  width: '80px',
+  height: '80px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  position: 'relative',
+  overflow: 'hidden',
+}));
+
+const CountdownNumber = styled(Typography)(({ theme }) => ({
+  color: '#FFFFFF',
+  fontFamily: '"Adelia", sans-serif',
+  fontSize: '2.5rem',
+  fontWeight: 'bold',
+  textShadow: '3px 2px 0px #cc9933',
+}));
+
+const CountdownLabel = styled(Typography)(({ theme }) => ({
+  color: '#670d2f',
+  fontFamily: '"Adelia", sans-serif',
+  fontSize: '0.9rem',
+  marginTop: theme.spacing(1),
+  textTransform: 'uppercase',
+  textShadow: '2px 3px 0px #FFFFFF',
+}));
+
+const CountdownTitle = styled(Typography)(({ theme }) => ({
+  color: '#670d2f',
+  fontFamily: '"Adelia", sans-serif',
+  fontSize: '1.5rem',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  marginBottom: theme.spacing(2),
+  textShadow: '2px 3px 0px #FFFFFF',
+}));
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
@@ -112,6 +166,33 @@ const theme = createTheme({
 });
 
 const Welcome = () => {
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const targetDate = new Date('2025-08-09T15:00:00'); // Set this to the actual event date
+
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((difference / 1000 / 60) % 60);
+        const seconds = Math.floor((difference / 1000) % 60);
+
+        setCountdown({ days, hours, minutes, seconds });
+      } else {
+        setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      }
+    };
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const floatingElements = [
     { emoji: '⭐', x: 5, y: 20, delay: 0 },
     { emoji: '🎀', x: 80, y: 30, delay: 1 },
@@ -148,7 +229,7 @@ const Welcome = () => {
         ))}
 
         <Grid container justifyContent="center" alignItems="center" direction={{ xs: 'column', sm: 'row' }}>
-          <Grid size={{ xs: 12, sm: 6}}>
+          <Grid size={{ xs: 12, sm: 6}} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Box sx={{ position: 'relative', zIndex: 2 }}>
               <WelcomeTitle>
                 A Magical Day to Celebrate 7 !
@@ -159,9 +240,36 @@ const Welcome = () => {
               <CelebrateMessage>
                 Let's sparkle, laugh, and celebrate Margaux's 7th birthday with all the sweetness and magic that Sanrio brings!
               </CelebrateMessage>
+              <CountdownTitle>TIME REMAINING</CountdownTitle>
+              <CountdownContainer>
+                <CountdownItem>
+                  <CountdownBox>
+                    <CountdownNumber>{countdown.days.toString().padStart(2, '0')}</CountdownNumber>
+                  </CountdownBox>
+                  <CountdownLabel>DAYS</CountdownLabel>
+                </CountdownItem>
+                <CountdownItem>
+                  <CountdownBox>
+                    <CountdownNumber>{countdown.hours.toString().padStart(2, '0')}</CountdownNumber>
+                  </CountdownBox>
+                  <CountdownLabel>HOURS</CountdownLabel>
+                </CountdownItem>
+                <CountdownItem>
+                  <CountdownBox>
+                    <CountdownNumber>{countdown.minutes.toString().padStart(2, '0')}</CountdownNumber>
+                  </CountdownBox>
+                  <CountdownLabel>MINUTES</CountdownLabel>
+                </CountdownItem>
+                <CountdownItem>
+                  <CountdownBox>
+                    <CountdownNumber>{countdown.seconds.toString().padStart(2, '0')}</CountdownNumber>
+                  </CountdownBox>
+                  <CountdownLabel>SECONDS</CountdownLabel>
+                </CountdownItem>
+              </CountdownContainer>
             </Box>
           </Grid>
-          <Grid size={{ xs: 12, sm: 6}}>
+          <Grid size={{ xs: 12, sm: 6}} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Box sx={{ position: 'relative', zIndex: 2 }}>
               <Image src={welcomePhoto} alt="Margaux Louise" />
             </Box>
