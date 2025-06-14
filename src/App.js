@@ -26,24 +26,24 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Comic Sans MS", "Nunito", "Roboto", "Helvetica", "Arial", sans-serif',
+    fontFamily: '"Belina", "Nunito", "Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontFamily: '"Comic Sans MS", cursive',
+      fontFamily: '"Belina", san-serif',
     },
     h2: {
-      fontFamily: '"Comic Sans MS", cursive',
+      fontFamily: '"Belina", san-serif',
     },
     h3: {
-      fontFamily: '"Comic Sans MS", cursive',
+      fontFamily: '"Belina", san-serif',
     },
     h4: {
-      fontFamily: '"Comic Sans MS", cursive',
+      fontFamily: '"Belina", san-serif',
     },
     h5: {
-      fontFamily: '"Comic Sans MS", cursive',
+      fontFamily: '"Belina", san-serif',
     },
     h6: {
-      fontFamily: '"Comic Sans MS", cursive',
+      fontFamily: '"Belina", san-serif',
     },
   },
   components: {

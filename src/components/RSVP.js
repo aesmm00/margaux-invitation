@@ -1,29 +1,72 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateField, submitRSVP } from '../redux/rsvpSlice';
-import { Box, Typography, Container, Paper, TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { updateField, submitRSVP, addName, removeName } from '../redux/rsvpSlice';
+import { Box, Typography, Container, Paper, TextField, Button, FormControl, FormControlLabel, RadioGroup, Radio, IconButton } from '@mui/material';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { styled } from '@mui/material/styles';
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
-  background: 'linear-gradient(135deg, #ffe5f0 0%, #fff6e5 100%)',
-  borderRadius: '20px',
-  textAlign: 'center',
+  background: 'linear-gradient(135deg, #FFB6C1 0%, #E6F0FF 100%)',
+  borderRadius: '30px',
   marginBottom: theme.spacing(4),
+  boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
+  display: 'flex',
+  justifyContent: 'center',
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(2),
   },
 }));
 
-const ResponsiveTypography = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.9em',
-  },
+const SectionTitle = styled(Typography)(({ theme }) => ({
+  color: '#670d2f',
+  fontWeight: 500,
+  marginBottom: theme.spacing(1),
+  fontSize: '1.1rem',
+  fontFamily: theme.typography.fontFamily,
 }));
 
 const StyledForm = styled('form')(({ theme }) => ({
   '& .MuiTextField-root, & .MuiFormControl-root': {
     marginBottom: theme.spacing(2),
+  },
+  '& .MuiRadio-root': {
+    color: '#670d2f',
+  },
+  '& .MuiRadio-root.Mui-checked': {
+    color: '#670d2f',
+  },
+  '& .MuiFormControlLabel-root': {
+    marginLeft: 0,
+  },
+}));
+
+const StyledButton = styled(Button)(({ theme }) => ({
+  backgroundColor: '#670d2f',
+  '&:hover': {
+    backgroundColor: '#4a0a22',
+  },
+}));
+
+const StyledTitle = styled(Typography)(({ theme }) => ({
+  color: '#670d2f',
+  fontFamily: '"Belina", sans-serif',
+  fontWeight: 500,
+  textAlign: 'center',
+  textShadow: '3px 2px 0px #FFFFFF',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+  },
+}));
+
+const StyledDescription = styled(Typography)(({ theme }) => ({
+  color: '#670d2f',
+  fontFamily: '"Belina", sans-serif',
+  fontSize: '1.5rem',
+  textShadow: '3px 2px 0px #FFFFFF',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1rem',
   },
 }));
 
@@ -36,68 +79,159 @@ const RSVP = () => {
     dispatch(updateField({ field: name, value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(submitRSVP());
+    try {
+      await dispatch(submitRSVP()).unwrap();
+    } catch (error) {
+      console.error('Failed to submit RSVP:', error);
+    }
   };
 
   if (rsvpData.submitted) {
     return (
       <Container maxWidth="sm">
-        <StyledPaper elevation={3}>
-          <ResponsiveTypography variant="h4" color="primary" gutterBottom>
+        <Box sx={{
+          background: 'linear-gradient(135deg, #FFB6C1 0%, #E6F0FF 100%)',
+          padding: '3rem 2rem',
+          borderRadius: '30px',
+          textAlign: 'center',
+          boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
+        }}>
+          <StyledTitle variant="h2" gutterBottom>
             Thank you for your RSVP!
-          </ResponsiveTypography>
-          <ResponsiveTypography variant="h6" color="secondary">
-            We can't wait to celebrate with you!
-          </ResponsiveTypography>
-          <Box sx={{ mt: 4 }}>
-            <ResponsiveTypography variant="h1">🎉</ResponsiveTypography>
-          </Box>
-        </StyledPaper>
+          </StyledTitle>
+          {rsvpData.attending === 'yes' ? (
+            <>
+              <StyledDescription>
+                We can't wait to celebrate with you!
+              </StyledDescription>
+              <Typography variant="h1" sx={{ fontSize: '5rem', marginBottom: '1rem' }}>
+                🎉
+              </Typography>
+            </>
+          ) : (
+            <StyledDescription>
+              We're sorry you can't make it, but thank you for letting us know.
+            </StyledDescription>
+          )}
+        </Box>
       </Container>
     );
   }
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="2xl">
       <StyledPaper elevation={3}>
-        <ResponsiveTypography variant="h4" color="primary" gutterBottom>
-          RSVP
-        </ResponsiveTypography>
-        <ResponsiveTypography variant="h6" color="secondary" gutterBottom>
-          Margo is turning 7! RSVP to be part of this super cute celebration! 🎀
-        </ResponsiveTypography>
+        <Box sx={{ 
+          background: 'linear-gradient(135deg, #ffe5f0 0%, #fff6e5 100%)', 
+          borderRadius: '20px', 
+          p: { xs: 2, sm: 4 },
+          width: '100%',
+          maxWidth: '500px'
+        }}>
+        <StyledTitle variant="h2" gutterBottom>
+          Join the Fun – RSVP Now!
+        </StyledTitle>
+        <StyledDescription >
+          MMargo’s big day is almost here, and it wouldn’t be complete without you!
+        </StyledDescription>
+        <Typography 
+          sx={{ 
+            color: '#670d2f',
+            mb: 2,
+            fontStyle: 'italic'
+          }}
+        >
+          Kindly RSVP by July 18, 2025 so we can save you a sweet spot.
+        </Typography>
         <StyledForm onSubmit={handleSubmit}>
-          <TextField
-            fullWidth
-            label="Name"
-            name="name"
-            value={rsvpData.name}
-            onChange={handleInputChange}
-            required
-          />
-          <FormControl fullWidth>
-            <InputLabel>Will you attend?</InputLabel>
-            <Select
+          <Box sx={{ mb: 3 }}>
+            <SectionTitle>Adult Names:</SectionTitle>
+            {rsvpData.adultNames.map((name, index) => (
+              <Box key={index} sx={{ display: 'flex', gap: 1, mb: 1 }}>
+                <TextField
+                  fullWidth
+                  label={`Adult Name ${index + 1}`}
+                  value={name}
+                  onChange={(e) => dispatch(updateField({ field: 'adultNames', value: e.target.value, index }))}
+                  required
+                />
+                {index > 0 && (
+                  <IconButton 
+                    onClick={() => dispatch(removeName({ field: 'adultNames', index }))}
+                    sx={{ color: '#670d2f' }}
+                  >
+                    <RemoveCircleOutlineIcon />
+                  </IconButton>
+                )}
+                {index === rsvpData.adultNames.length - 1 && (
+                  <IconButton 
+                    onClick={() => dispatch(addName({ field: 'adultNames' }))}
+                    sx={{ color: '#670d2f' }}
+                  >
+                    <AddCircleOutlineIcon />
+                  </IconButton>
+                )}
+              </Box>
+            ))}
+          </Box>
+
+          <FormControl component="fieldset" fullWidth sx={{ mb: 3 }}>
+            <SectionTitle>Are you bringing kids?</SectionTitle>
+            <RadioGroup
+              name="hasKids"
+              value={rsvpData.hasKids.toString()}
+              onChange={(e) => dispatch(updateField({ field: 'hasKids', value: e.target.value === 'true' }))}
+            >
+              <FormControlLabel value="true" control={<Radio />} label="Yes" />
+              <FormControlLabel value="false" control={<Radio />} label="No" />
+            </RadioGroup>
+          </FormControl>
+          
+          {rsvpData.hasKids && (
+            <Box sx={{ mb: 3 }}>
+              <SectionTitle>Kid Names:</SectionTitle>
+              {rsvpData.kidNames.map((name, index) => (
+              <Box key={index} sx={{ display: 'flex', gap: 1, mb: 1 }}>
+                <TextField
+                  fullWidth
+                  label={`Kid Name ${index + 1}`}
+                  value={name}
+                  onChange={(e) => dispatch(updateField({ field: 'kidNames', value: e.target.value, index }))}
+                />
+                {index > 0 && (
+                  <IconButton 
+                    onClick={() => dispatch(removeName({ field: 'kidNames', index }))}
+                    sx={{ color: '#670d2f' }}
+                  >
+                    <RemoveCircleOutlineIcon />
+                  </IconButton>
+                )}
+                {index === rsvpData.kidNames.length - 1 && (
+                  <IconButton 
+                    onClick={() => dispatch(addName({ field: 'kidNames' }))}
+                    sx={{ color: '#670d2f' }}
+                  >
+                    <AddCircleOutlineIcon />
+                  </IconButton>
+                )}
+              </Box>
+              ))}
+            </Box>
+          )}
+          <FormControl component="fieldset" fullWidth sx={{ mb: 3 }}>
+            <SectionTitle>Will you attend?</SectionTitle>
+            <RadioGroup
               name="attending"
               value={rsvpData.attending}
               onChange={handleInputChange}
               required
             >
-              <MenuItem value="yes">Yes, I'll be there!</MenuItem>
-              <MenuItem value="no">Sorry, I can't make it</MenuItem>
-            </Select>
+              <FormControlLabel value="yes" control={<Radio />} label="Yes, I'll be there!" />
+              <FormControlLabel value="no" control={<Radio />} label="Sorry, I can't make it" />
+            </RadioGroup>
           </FormControl>
-          <TextField
-            fullWidth
-            label="Number of Guests"
-            name="numberOfGuests"
-            type="number"
-            value={rsvpData.numberOfGuests}
-            onChange={handleInputChange}
-            InputProps={{ inputProps: { min: 1, max: 5 } }}
-          />
           <TextField
             fullWidth
             label="Message"
@@ -107,17 +241,23 @@ const RSVP = () => {
             multiline
             rows={4}
           />
-          <Button
+          {rsvpData.error && (
+            <Typography color="error" sx={{ mb: 2 }}>
+              Error submitting RSVP. Please try again.
+            </Typography>
+          )}
+          <StyledButton
             type="submit"
             variant="contained"
-            color="primary"
             size="large"
             fullWidth
             sx={{ mt: 2 }}
+            disabled={rsvpData.submitting}
           >
-            Send RSVP
-          </Button>
+            {rsvpData.submitting ? 'Submitting...' : 'Confirm my attendance'}
+          </StyledButton>
         </StyledForm>
+        </Box>
       </StyledPaper>
     </Container>
   );

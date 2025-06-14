@@ -18,8 +18,6 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   borderRadius: '30px',
   marginBottom: theme.spacing(4),
   boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
-
-
 }));
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
