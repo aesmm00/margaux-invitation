@@ -22,14 +22,14 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
   color: '#670d2f',
-  fontFamily: '"Belina", sans-serif',
-  fontSize: '4rem',
+  fontFamily: '"Adelia", sans-serif',
+  fontSize: '3rem',
   fontWeight: 500,
   textAlign: 'center',
   marginBottom: theme.spacing(4),
   textShadow: '3px 2px 0px #FFFFFF',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '2rem',
+    fontSize: '1.5rem',
   },
 }));
 

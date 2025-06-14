@@ -51,12 +51,13 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 const StyledTitle = styled(Typography)(({ theme }) => ({
   color: '#670d2f',
-  fontFamily: '"Belina", sans-serif',
+  fontFamily: '"Adelia", sans-serif',
+  fontSize: '3rem',
   fontWeight: 500,
   textAlign: 'center',
   textShadow: '3px 2px 0px #FFFFFF',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '2rem',
+    fontSize: '1.5rem',
   },
 }));
 
@@ -136,7 +137,7 @@ const RSVP = () => {
           Join the Fun – RSVP Now!
         </StyledTitle>
         <StyledDescription >
-          MMargo’s big day is almost here, and it wouldn’t be complete without you!
+          Margo’s big day is almost here, and it wouldn’t be complete without you!
         </StyledDescription>
         <Typography 
           sx={{ 
