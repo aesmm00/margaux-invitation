@@ -33,6 +33,7 @@ const CountdownBox = styled(Box)(({ theme }) => ({
   boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   position: 'relative',
   overflow: 'hidden',
+  boxShadow: '2px 3px 0px #FFFFFF',
   [theme.breakpoints.down('sm')]: {
     width: '60px',
     height: '60px',
