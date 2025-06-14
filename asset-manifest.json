@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/margaux-invitation/static/css/main.e0a30754.css",
-    "main.js": "/margaux-invitation/static/js/main.efb5dc8d.js",
+    "main.js": "/margaux-invitation/static/js/main.fc2feee5.js",
     "static/js/453.bf1d01c4.chunk.js": "/margaux-invitation/static/js/453.bf1d01c4.chunk.js",
     "static/media/3.png": "/margaux-invitation/static/media/3.3d33e9579ebeb474bf58.png",
     "static/media/2.png": "/margaux-invitation/static/media/2.876302239ac533279d17.png",
@@ -21,11 +21,11 @@
     "static/media/Stars&Love-BottomHeavy.ttf": "/margaux-invitation/static/media/Stars&Love-BottomHeavy.6af1665a6e9b95b9b565.ttf",
     "index.html": "/margaux-invitation/index.html",
     "main.e0a30754.css.map": "/margaux-invitation/static/css/main.e0a30754.css.map",
-    "main.efb5dc8d.js.map": "/margaux-invitation/static/js/main.efb5dc8d.js.map",
+    "main.fc2feee5.js.map": "/margaux-invitation/static/js/main.fc2feee5.js.map",
     "453.bf1d01c4.chunk.js.map": "/margaux-invitation/static/js/453.bf1d01c4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e0a30754.css",
-    "static/js/main.efb5dc8d.js"
+    "static/js/main.fc2feee5.js"
   ]
 }
