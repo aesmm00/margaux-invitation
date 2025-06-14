@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const API_URL = 'https://script.google.com/macros/s/AKfycbxreewFaJl8sE2IUjAGkO40wfubiiLnwdyJLqoTEEZP2h7RmAmfV3BZRNP-eC_EnIBLEw/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbwbKh3OP1VS7Fbq3FLOvygQJQrhAPRNCVASD4kMiuz8fKtGQoR85oyRPv4pCQT468gDiQ/exec';
 
 export const submitRSVP = createAsyncThunk(
   'rsvp/submit',
@@ -20,7 +20,8 @@ export const submitRSVP = createAsyncThunk(
             body: JSON.stringify({
                 sheetName: 'Adult RSVP',
                 name: name,
-                rsvp: state.attending === 'yes' ? 'Accepted' : 'Declined'
+                rsvp: state.attending === 'yes' ? 'Accepted' : 'Declined',
+                message: state.message
               })
           })
         );
@@ -40,7 +41,8 @@ export const submitRSVP = createAsyncThunk(
               body: JSON.stringify({
                   sheetName: 'Kids RSVP',
                   name: name,
-                  rsvp: state.attending === 'yes' ? 'Accepted' : 'Declined'
+                  rsvp: state.attending === 'yes' ? 'Accepted' : 'Declined',
+                  message: state.message
                 })
             })
           );
