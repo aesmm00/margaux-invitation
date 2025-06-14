@@ -15,7 +15,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(0),
   },
 }));
 
@@ -90,32 +90,34 @@ const RSVP = () => {
 
   if (rsvpData.submitted) {
     return (
-      <Container maxWidth="sm">
-        <Box sx={{
-          background: 'linear-gradient(135deg, #FFB6C1 0%, #E6F0FF 100%)',
-          padding: '3rem 2rem',
-          borderRadius: '30px',
-          textAlign: 'center',
-          boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
-        }}>
-          <StyledTitle variant="h2" gutterBottom>
-            Thank you for your RSVP!
-          </StyledTitle>
-          {rsvpData.attending === 'yes' ? (
-            <>
+      <Container maxWidth="2xl">
+        <StyledPaper elevation={3}>
+          <Box sx={{
+          background: 'linear-gradient(135deg, #ffe5f0 0%, #fff6e5 100%)', 
+            padding: '3rem 2rem',
+            borderRadius: '30px',
+            textAlign: 'center',
+            boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
+          }}>
+            <StyledTitle variant="h2" gutterBottom>
+              Thank you for your RSVP!
+            </StyledTitle>
+            {rsvpData.attending === 'yes' ? (
+              <>
+                <StyledDescription>
+                  We can't wait to celebrate with you!
+                </StyledDescription>
+                <Typography variant="h1" sx={{ fontSize: '5rem', marginBottom: '1rem' }}>
+                  🎉
+                </Typography>
+              </>
+            ) : (
               <StyledDescription>
-                We can't wait to celebrate with you!
+                We're sorry you can't make it, but thank you for letting us know.
               </StyledDescription>
-              <Typography variant="h1" sx={{ fontSize: '5rem', marginBottom: '1rem' }}>
-                🎉
-              </Typography>
-            </>
-          ) : (
-            <StyledDescription>
-              We're sorry you can't make it, but thank you for letting us know.
-            </StyledDescription>
-          )}
-        </Box>
+            )}
+          </Box>
+        </StyledPaper>
       </Container>
     );
   }
