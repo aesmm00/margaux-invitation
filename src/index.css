@@ -49,6 +49,16 @@ code {
   font-family: 'Belina', sans-serif;
 }
 
+.quintessential-regular {
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-malibu {
+  font-family: 'Malibu', sans-serif;
+}
+
 @media (max-width: 768px) {
   :root {
     font-size: 14px;

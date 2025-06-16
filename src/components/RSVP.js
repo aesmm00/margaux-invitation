@@ -63,12 +63,9 @@ const StyledTitle = styled(Typography)(({ theme }) => ({
 
 const StyledDescription = styled(Typography)(({ theme }) => ({
   color: '#670d2f',
-  fontFamily: '"Belina", sans-serif',
-  fontSize: '1.5rem',
+  fontFamily: '"Quintessential", serif',
   textShadow: '3px 2px 0px #FFFFFF',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '1rem',
-  },
+
 }));
 
 const RSVP = () => {
@@ -136,18 +133,13 @@ const RSVP = () => {
         <StyledTitle variant="h2" gutterBottom>
           Join the Fun – RSVP Now!
         </StyledTitle>
-        <StyledDescription >
+        <StyledDescription variant='h5'>
           Margo’s big day is almost here, and it wouldn’t be complete without you!
         </StyledDescription>
-        <Typography 
-          sx={{ 
-            color: '#670d2f',
-            mb: 2,
-            fontStyle: 'italic'
-          }}
-        >
+        <StyledDescription variant='body1' sx={{fontStyle: 'italic'}} gutterBottom>
           Kindly RSVP by July 18, 2025 so we can save you a sweet spot.
-        </Typography>
+        </StyledDescription>
+
         <StyledForm onSubmit={handleSubmit}>
           <Box sx={{ mb: 3 }}>
             <SectionTitle>Adult Names:</SectionTitle>

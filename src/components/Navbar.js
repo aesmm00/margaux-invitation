@@ -25,7 +25,7 @@ const StyledMenu = styled(Menu)(({ theme }) => ({
 }));
 
 const StyledMenuItem = styled(MenuItem)(({ theme }) => ({
-  fontFamily: '"Belina", sans-serif',
+  fontFamily: '"Quintessential", serif',
   color: '#000',
   fontWeight: 'bold',
   '&:hover': {
@@ -39,7 +39,7 @@ const NavItem = styled(Typography)(({ theme }) => ({
   padding: theme.spacing(0.5, 1),
   cursor: 'pointer',
   color: '#000',
-  fontFamily: '"Belina", sans-serif',
+  fontFamily: '"Quintessential", serif',
   fontWeight: 'bold',
   '&:hover': {
     color: '#670d2f',
@@ -47,7 +47,7 @@ const NavItem = styled(Typography)(({ theme }) => ({
 }));
 
 const LogoText = styled(Typography)(({ theme }) => ({
-  fontFamily: '"Stars and Love", cursive',
+  fontFamily: '"Quintessential", serif',
   fontWeight: 'bold',
   fontSize: '1.5rem',
   color: '#FFFFFF',

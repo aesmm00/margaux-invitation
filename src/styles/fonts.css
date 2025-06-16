@@ -55,3 +55,11 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Malibu';
+  src: url('../asset/fonts/Malibu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+

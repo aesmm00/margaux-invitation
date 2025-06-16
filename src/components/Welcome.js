@@ -111,15 +111,11 @@ const FloatingElement = styled('div')(({ theme, delay = 0, x = 0, y = 0 }) => ({
 
 const WelcomeTitle = styled(Typography)(({ theme }) => ({
   color: '#670d2f',
-  fontFamily: '"Belina", sans-serif',
-  fontSize: '1.75rem',
+  fontFamily: '"Quintessential", serif',
   fontWeight: 'bold',
   textAlign: 'center',
   marginBottom: theme.spacing(2),
   textShadow: '1px 1px 0px #FFFFFF',
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '1.5rem',
-  },
 }));
 
 const CelebrantName = styled(Typography)(({ theme }) => ({
@@ -149,14 +145,12 @@ const CelebrantName = styled(Typography)(({ theme }) => ({
 
 const CelebrateMessage = styled(Typography)(({ theme }) => ({
   color: '#670d2f',
-  fontFamily: '"Belina", sans-serif',
-  fontSize: '1.5rem',
+  fontFamily: '"Quintessential", serif',
   textAlign: 'center',
   marginBottom: theme.spacing(4),
   fontStyle: 'italic',
   textShadow: '1px 1px 0px #FFFFFF',
   [theme.breakpoints.down('sm')]: {
-    fontSize: '1.25rem',
     maxWidth: '100%',
   },
 }));
@@ -246,13 +240,13 @@ const Welcome = () => {
         <Grid container justifyContent="center" alignItems="center" direction={{ xs: 'column', sm: 'row' }}>
           <Grid size={{ xs: 12, sm: 6}} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', padding: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
             <Box sx={{ position: 'relative', zIndex: 2 }}>
-              <WelcomeTitle>
+              <WelcomeTitle variant="h5">
                 A Magical Day to Celebrate 7 !
               </WelcomeTitle>
               <CelebrantName>
                 Margaux Louise
               </CelebrantName>
-              <CelebrateMessage>
+              <CelebrateMessage variant="h5">
                 Let's sparkle, laugh, and celebrate Margaux's 7th birthday with all the sweetness and magic that Sanrio brings!
               </CelebrateMessage>
               <CountdownTitle>TIME REMAINING</CountdownTitle>
