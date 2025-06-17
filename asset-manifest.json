@@ -1,13 +1,21 @@
 {
   "files": {
     "main.css": "/margaux-invitation/static/css/main.fde030d5.css",
-    "main.js": "/margaux-invitation/static/js/main.d0efc10c.js",
+    "main.js": "/margaux-invitation/static/js/main.d8a3efb8.js",
     "static/js/453.bf1d01c4.chunk.js": "/margaux-invitation/static/js/453.bf1d01c4.chunk.js",
     "static/media/7giftsAndGiftIdeas.png": "/margaux-invitation/static/media/7giftsAndGiftIdeas.41d9ded9bab485836da3.png",
     "static/media/7blueBillsAndTreasures.png": "/margaux-invitation/static/media/7blueBillsAndTreasures.6080513869397e263f3a.png",
     "static/media/7sweetsAndStorybooks.png": "/margaux-invitation/static/media/7sweetsAndStorybooks.66237c0d665721cc7b7d.png",
     "static/media/7rosesAndCandles.png": "/margaux-invitation/static/media/7rosesAndCandles.984c592184d73aae8a74.png",
     "static/media/welcomePhoto.png": "/margaux-invitation/static/media/welcomePhoto.1eb3445d0102a77c156e.png",
+    "static/media/JHE_5576.jpg": "/margaux-invitation/static/media/JHE_5576.d69565ea455e69d08f0f.jpg",
+    "static/media/JHE_5714.jpg": "/margaux-invitation/static/media/JHE_5714.d3dfe7661d13e4f4f7f2.jpg",
+    "static/media/JHE_5582.jpg": "/margaux-invitation/static/media/JHE_5582.769f83bca5d21b3b55d4.jpg",
+    "static/media/JHE_5713.jpg": "/margaux-invitation/static/media/JHE_5713.309dd07b7acdd88b1e0a.jpg",
+    "static/media/JHE_5603.jpg": "/margaux-invitation/static/media/JHE_5603.058bb53ca37aa1407b3f.jpg",
+    "static/media/JHE_5680.jpg": "/margaux-invitation/static/media/JHE_5680.cff87b95d68851b16e02.jpg",
+    "static/media/JHE_5708.jpg": "/margaux-invitation/static/media/JHE_5708.a11356c6c63b9d2a5fa0.jpg",
+    "static/media/JHE_5627.jpg": "/margaux-invitation/static/media/JHE_5627.f242cd9f8c2b16be321b.jpg",
     "static/media/wazeQR.png": "/margaux-invitation/static/media/wazeQR.5c3e7dace9e1986b04d9.png",
     "static/media/googleMapQR.png": "/margaux-invitation/static/media/googleMapQR.cc65c97477f151a82925.png",
     "static/media/Cocogoose-Classic-Medium-trial.ttf": "/margaux-invitation/static/media/Cocogoose-Classic-Medium-trial.eb4ac05e6a9e8ba2af09.ttf",
@@ -23,11 +31,11 @@
     "static/media/Stars&Love-BottomHeavy.ttf": "/margaux-invitation/static/media/Stars&Love-BottomHeavy.6af1665a6e9b95b9b565.ttf",
     "index.html": "/margaux-invitation/index.html",
     "main.fde030d5.css.map": "/margaux-invitation/static/css/main.fde030d5.css.map",
-    "main.d0efc10c.js.map": "/margaux-invitation/static/js/main.d0efc10c.js.map",
+    "main.d8a3efb8.js.map": "/margaux-invitation/static/js/main.d8a3efb8.js.map",
     "453.bf1d01c4.chunk.js.map": "/margaux-invitation/static/js/453.bf1d01c4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fde030d5.css",
-    "static/js/main.d0efc10c.js"
+    "static/js/main.d8a3efb8.js"
   ]
 }
