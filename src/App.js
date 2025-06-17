@@ -4,6 +4,7 @@ import { store } from './redux/store';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import Welcome from './components/Welcome';
+import AboutMe from './components/AboutMe';
 import PartyDetails from './components/PartyDetails';
 import RSVP from './components/RSVP';
 import Navbar from './components/Navbar';
@@ -59,6 +60,7 @@ const theme = createTheme({
 
 function App() {
   const welcomeRef = useRef(null);
+  const aboutMeRef = useRef(null);
   const partyDetailsRef = useRef(null);
   const rsvpRef = useRef(null);
   return (
@@ -70,6 +72,7 @@ function App() {
         }}>
           <Navbar 
             welcomeRef={welcomeRef}
+            aboutMeRef={aboutMeRef}
             partyDetailsRef={partyDetailsRef}
             rsvpRef={rsvpRef}
           />
@@ -81,6 +84,9 @@ function App() {
           }}>
             <Box ref={welcomeRef}>
               <Welcome />
+            </Box>
+            <Box ref={aboutMeRef}>
+              <AboutMe />
             </Box>
             <Box ref={partyDetailsRef}>
               <PartyDetails />

@@ -55,7 +55,7 @@ const LogoText = styled(Typography)(({ theme }) => ({
 
 }));
 
-const Navbar = ({ welcomeRef, partyDetailsRef, rsvpRef }) => {
+const Navbar = ({ welcomeRef, aboutMeRef, partyDetailsRef, rsvpRef }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -84,6 +84,7 @@ const Navbar = ({ welcomeRef, partyDetailsRef, rsvpRef }) => {
         </Box>
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
           <NavItem onClick={() => scrollToSection(welcomeRef)}>Welcome</NavItem>
+          <NavItem onClick={() => scrollToSection(aboutMeRef)}>About Me</NavItem>
           <NavItem onClick={() => scrollToSection(partyDetailsRef)}>Party Details</NavItem>
           <NavItem onClick={() => scrollToSection(rsvpRef)}>RSVP</NavItem>
         </Box>
@@ -113,6 +114,7 @@ const Navbar = ({ welcomeRef, partyDetailsRef, rsvpRef }) => {
             onClose={handleClose}
           >
             <StyledMenuItem onClick={() => handleNavClick(welcomeRef)}>Welcome</StyledMenuItem>
+            <StyledMenuItem onClick={() => handleNavClick(aboutMeRef)}>About Me</StyledMenuItem>
             <StyledMenuItem onClick={() => handleNavClick(partyDetailsRef)}>Party Details</StyledMenuItem>
             <StyledMenuItem onClick={() => handleNavClick(rsvpRef)}>RSVP</StyledMenuItem>
           </StyledMenu>
