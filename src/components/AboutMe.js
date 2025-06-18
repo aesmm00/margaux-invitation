@@ -192,24 +192,18 @@ const AboutMe = () => {
             <Grid size={{ xs: 12, md: 8 }}>
               <SectionTitle variant="h4">About Margaux Louise</SectionTitle>
               <AboutText variant="body1">
-                Hi! My name is <BoldSpan>Margaux Louise</BoldSpan>, but I love it when people just call me Margo. <EmojiSpan>🐼</EmojiSpan>I'm turning <BoldSpan>7 years old</BoldSpan> this year, 
-                and my birthday is on <BoldSpan>August 9</BoldSpan>. My favorite color is <BoldSpan>lavender purple</BoldSpan> because it's soft and magical! I really enjoy munching on <BoldSpan>chicken nuggets and cheese-flavored 
-                chips</BoldSpan>, especially during <EmojiSpan>🍿</EmojiSpan>movie nights. For fun, I love to <BoldSpan>draw</BoldSpan>, <EmojiSpan>💃</EmojiSpan><BoldSpan>dance</BoldSpan>, and <BoldSpan>play with my 
-                Unicorn Barbie</BoldSpan> — she's my absolute favorite!
+                Hi! My name is <BoldSpan>Margaux Louise Macavinta Rosales</BoldSpan>, but you can call me Margo! <EmojiSpan>🐼</EmojiSpan>I'm turning <BoldSpan>7 years old</BoldSpan> this year — 
+                I was born on <BoldSpan>August 8, 2018</BoldSpan>. My favorite colors are <BoldSpan>pink, blue, and purple</BoldSpan> because they're soft and magical. I love eating <BoldSpan>fresh milk and breadsticks</BoldSpan>, 
+                especially as a snack! For fun, I enjoy playing <BoldSpan>"Grow a Garden" on Roblox</BoldSpan> and watching <BoldSpan>Peppa Pig and Sanrio shows</BoldSpan> — they always make me smile.
               </AboutText>
               <AboutText variant="body1">
-                I have two super cute dogs named <BoldSpan>Churro and Mocha</BoldSpan> — they're fluffy, playful, and love cuddles! 
-                Right now, I can't get enough of watching <BoldSpan>Bluey</BoldSpan>, and if I could have another pet, I'd still choose 
-                a <BoldSpan>panda</BoldSpan> — they're just too adorable! When I grow up, I want to be a <EmojiSpan>👩‍⚕️</EmojiSpan><BoldSpan>doctor</BoldSpan> so I can 
-                help people feel better. I'm really good at <BoldSpan>crafts and coloring</BoldSpan>, and I love making cards for my 
-                family and friends. Nothing makes me happier than <BoldSpan>hugs, stickers, and spending time with the 
-                people I love</BoldSpan>.
+                I have three awesome pets named <BoldSpan>Shadow, Mulan, and Wigo</BoldSpan>. If I could have even more animals, I'd love to have a <BoldSpan>cat and a bird</BoldSpan> as pets too! 
+                Someday, I want to be a <BoldSpan>teacher or a lawyer</BoldSpan> — I think helping others and learning new things is exciting! I'm really good at <BoldSpan>drawing</BoldSpan>, and I feel super happy 
+                when my brother is joking around and making me laugh.
               </AboutText>
               <AboutText variant="body1">
-                Birthdays are my favorite because of all the <EmojiSpan>🎂</EmojiSpan><BoldSpan>cake, balloons, and the special feeling of being 
-                celebrated</BoldSpan>. If I could go anywhere in the world, I'd pick <EmojiSpan>🏰</EmojiSpan><BoldSpan>Disneyland</BoldSpan> — I'd love to meet the 
-                princesses! My best friend is <BoldSpan>Luna</BoldSpan> because she's always kind, fun, and makes me giggle. Oh, and something funny 
-                about me? I can make the <BoldSpan>silliest duck voice</BoldSpan> ever — it always makes everyone laugh!
+                If I could travel anywhere, I'd visit <BoldSpan>Beijing, China</BoldSpan>! <EmojiSpan>🇨🇳</EmojiSpan> My best friend is <BoldSpan>Hazel</BoldSpan> — 
+                she's kind and always a good friend to me. And here's something cool I want everyone to know: <BoldSpan>I'm a genius</BoldSpan> — and I love getting to know people, too!
               </AboutText>
             </Grid>
           </Grid>
