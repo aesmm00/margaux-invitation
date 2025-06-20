@@ -132,7 +132,7 @@ const PartyDetails = () => {
                                     Join us on:
                                 </Typography>
                                 <Typography variant="body1" sx={{ color: '#670d2f', fontFamily: '"Quintessential", serif', textShadow: '3px 2px 0px #FFFFFF', marginLeft: 2  }}>
-                                    <strong>Saturday, November 18, 2023</strong><br />
+                                    <strong>Saturday, August 9, 2023</strong><br />
                                     <strong>3:00 PM</strong><br />
                                     <strong>At the beautiful</strong><br />
                                     <strong>3s Canumay West Function Hall</strong><br />
