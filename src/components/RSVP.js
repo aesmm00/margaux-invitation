@@ -137,7 +137,7 @@ const RSVP = () => {
           Margo’s big day is almost here, and it wouldn’t be complete without you!
         </StyledDescription>
         <StyledDescription variant='body1' sx={{fontStyle: 'italic'}} gutterBottom>
-          Kindly RSVP by July 18, 2025 so we can save you a sweet spot.
+          Kindly RSVP by July 25, 2025 so we can save you a sweet spot.
         </StyledDescription>
 
         <StyledForm onSubmit={handleSubmit}>
