@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateField, submitRSVP, addName, removeName } from '../redux/rsvpSlice';
-import { Box, Typography, Container, Paper, TextField, Button, FormControl, FormControlLabel, RadioGroup, Radio, IconButton } from '@mui/material';
+import { Box, Typography, Container, Paper, TextField, Button, FormControl, FormControlLabel, RadioGroup, Radio, IconButton, Alert } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { styled } from '@mui/material/styles';
@@ -139,6 +139,9 @@ const RSVP = () => {
         <StyledDescription variant='body1' sx={{fontStyle: 'italic'}} gutterBottom>
           Kindly RSVP by July 25, 2025 so we can save you a sweet spot.
         </StyledDescription>
+        <Alert severity="info" variant='outlined' sx={{ mb: 3 }}>          
+          NOTE: PLEASE REFER TO YOUR INVITATION OR FACEBOOK MESSAGE FOR THE NUMBER OF SEATS RESERVED FOR YOU (ADULTS AND KIDS). SEATS ARE LIMITED.
+        </Alert>
 
         <StyledForm onSubmit={handleSubmit}>
           <Box sx={{ mb: 3 }}>
