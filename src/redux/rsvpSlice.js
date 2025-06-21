@@ -20,6 +20,7 @@ export const submitRSVP = createAsyncThunk(
             body: JSON.stringify({
                 sheetName: 'Adult RSVP',
                 name: name,
+                email: state.email,
                 rsvp: state.attending === 'yes' ? 'Accepted' : 'Declined',
                 message: state.message
               })
@@ -41,6 +42,7 @@ export const submitRSVP = createAsyncThunk(
               body: JSON.stringify({
                   sheetName: 'Kids RSVP',
                   name: name,
+                  email: state.email,
                   rsvp: state.attending === 'yes' ? 'Accepted' : 'Declined',
                   message: state.message
                 })
@@ -60,6 +62,7 @@ const initialState = {
   kidNames: [''],
   attending: 'yes',
   message: '',
+  email: '',
   submitted: false,
   submitting: false,
   error: null

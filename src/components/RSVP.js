@@ -229,6 +229,17 @@ const RSVP = () => {
           </FormControl>
           <TextField
             fullWidth
+            label="Email"
+            name="email"
+            value={rsvpData.email}
+            onChange={handleInputChange}
+            type="email"
+            required
+            sx={{ mb: 2 }}
+            helperText="We'll use this to send you event updates"
+          />
+          <TextField
+            fullWidth
             label="Message"
             name="message"
             value={rsvpData.message}
