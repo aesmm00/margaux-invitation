@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateField, submitRSVP, addName, removeName } from '../redux/rsvpSlice';
 import { Box, Typography, Container, Paper, TextField, Button, FormControl, FormControlLabel, RadioGroup, Radio, IconButton, Alert } from '@mui/material';
+import { parseISO, isAfter } from 'date-fns';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import { styled } from '@mui/material/styles';
@@ -71,6 +72,8 @@ const StyledDescription = styled(Typography)(({ theme }) => ({
 const RSVP = () => {
   const dispatch = useDispatch();
   const rsvpData = useSelector((state) => state.rsvp);
+  const rsvpDeadline = '2025-07-18';
+  const currentDate = new Date();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -85,6 +88,32 @@ const RSVP = () => {
       console.error('Failed to submit RSVP:', error);
     }
   };
+
+  // Check if RSVP period is closed
+  const isRSVPClosed = isAfter(currentDate, parseISO(rsvpDeadline));
+
+  if (isRSVPClosed) {
+    return (
+      <Container maxWidth="2xl">
+        <StyledPaper elevation={3}>
+          <Box sx={{
+            background: 'linear-gradient(135deg, #ffe5f0 0%, #fff6e5 100%)', 
+            padding: '3rem 2rem',
+            borderRadius: '30px',
+            textAlign: 'center',
+            boxShadow: '0 8px 32px rgba(255, 105, 180, 0.2)',
+          }}>
+            <StyledTitle variant="h2" gutterBottom>
+              RSVP Closed
+            </StyledTitle>
+            <StyledDescription>
+              The RSVP period has ended. Thank you to everyone who has responded!
+            </StyledDescription>
+          </Box>
+        </StyledPaper>
+      </Container>
+    );
+  }
 
   if (rsvpData.submitted) {
     return (
@@ -136,8 +165,8 @@ const RSVP = () => {
         <StyledDescription variant='h5'>
           Margo’s big day is almost here, and it wouldn’t be complete without you!
         </StyledDescription>
-        <StyledDescription variant='body1' sx={{fontStyle: 'italic'}} gutterBottom>
-          Kindly RSVP by July 25, 2025 so we can save you a sweet spot.
+        <StyledDescription variant='body1' sx={{fontStyle: 'italic', color: 'red', fontWeight: 'bold'}} gutterBottom>
+          RSVP Closes: July 18, 2025 - Don't Miss Your Chance!
         </StyledDescription>
         <Alert severity="info" variant='outlined' sx={{ mb: 3 }}>          
           NOTE: PLEASE REFER TO YOUR INVITATION OR FACEBOOK MESSAGE FOR THE NUMBER OF SEATS RESERVED FOR YOU (ADULTS AND KIDS). SEATS ARE LIMITED.
