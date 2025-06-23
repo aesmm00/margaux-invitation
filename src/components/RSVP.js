@@ -272,7 +272,7 @@ const RSVP = () => {
           />
           <TextField
             fullWidth
-            label="Message"
+            label="Message for Margaux"
             name="message"
             value={rsvpData.message}
             onChange={handleInputChange}
