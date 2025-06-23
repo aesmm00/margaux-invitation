@@ -174,12 +174,12 @@ const RSVP = () => {
 
         <StyledForm onSubmit={handleSubmit}>
           <Box sx={{ mb: 3 }}>
-            <SectionTitle>Adult Names:</SectionTitle>
+            <SectionTitle>Guest Names:</SectionTitle>
             {rsvpData.adultNames.map((name, index) => (
               <Box key={index} sx={{ display: 'flex', gap: 1, mb: 1 }}>
                 <TextField
                   fullWidth
-                  label={`Adult Name ${index + 1}`}
+                  label={`Guest Name ${index + 1}`}
                   value={name}
                   onChange={(e) => dispatch(updateField({ field: 'adultNames', value: e.target.value, index }))}
                   required
