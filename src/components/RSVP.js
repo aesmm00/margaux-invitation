@@ -205,6 +205,7 @@ const RSVP = () => {
                         value={name}
                         onChange={(e) => dispatch(updateField({ field: 'adultNames', value: e.target.value, index }))}
                         required
+                        helperText="Please enter the full name of each guest attending"
                       />
                     </Box>
                     
@@ -275,6 +276,7 @@ const RSVP = () => {
                         label={`Kid Name ${index + 1}`}
                         value={name}
                         onChange={(e) => dispatch(updateField({ field: 'kidNames', value: e.target.value, index }))}
+                        helperText="Please enter the full name of each child attending"
                       />
                     </Grid>
 
