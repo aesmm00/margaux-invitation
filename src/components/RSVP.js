@@ -91,7 +91,7 @@ const StyledDescription = styled(Typography)(({ theme }) => ({
 const RSVP = () => {
   const dispatch = useDispatch();
   const rsvpData = useSelector((state) => state.rsvp);
-  const rsvpDeadline = '2025-07-18';
+  const rsvpDeadline = '2025-07-21';
   const currentDate = new Date();
 
   const handleInputChange = (e) => {
